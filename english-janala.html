@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangla Janala</title>
+ <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .bn-font {
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      .accordion-title::after{
+        content:"+";
+        position:absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right: 20px;
+        font-size: 24px;
+        font-weight: 400;
+      }
+      .accordion-title.active::after{
+        content:"-";
+      }
+    .accordion-desc{
+      padding-top:0;
+      padding-bottom:0;
+      max-height: 0;
+      overflow: hidden;
+      transition:all 0.3s ease-in-out;
+    }
+    .accordion-desc.show{
+      padding-bottom:20px;
+      max-height: 100%;
+    }
+    .btn{
+      transition:all 0.3s ease-in-out;
+    }
+    #book path{
+      fill:#422AD5;
+      transition:all 0.3s ease-in-out;
+    }
+    .btn:hover #book path{
+      fill:#fff;
+    }
+    </style>
+  </head>
+
+<body class="relative">
+
+  <nav class="border-b border-gray-200 py-5 bg-[#C6BDBD20] sticky top-0 left-0 z-20 backdrop-blur-md">
+    <div class="nav-container max-w-[1580px] mx-auto px-5">
+    <div class="flex justify-between ">
+      <a class="logo flex items-center text-center cursor-pointer">
+        <span class="text-xl font-semibold text-gray-800">English</span>
+        <img class="" src="assets/logo.png" alt="logo png">
+        <span  class="text-xl font-semibold text-gray-800 bn-font">জানালা</span>   
+      </a>
+      <div class="logo-btn flex gap-5 ">
+        <button class="btn bg-white rounded-md border-2 border-purple-900 py-3 px-5 focus:outline-none text-base font-semibold hover:border-purple-600">
+          <img src="assets/question-symbol.svg" alt="">
+          FAQ
+          
+        </button>
+        <button class="btn bg-white rounded-md border-2 border-purple-900 py-3 px-5 focus:outline-none text-base font-semibold hover:border-purple-600">
+          <img class="mr-2" src="assets/Book-Symbol.svg" alt="">
+          Learn
+        </button>
+        <button class="btn bg-white rounded-md border-2 border-purple-900 py-3 px-5 focus:outline-none text-base font-semibold hover:border-purple-600">
+          <img src="assets/arrow-right-from-bracket-solid.svg" alt="">
+          LogOut
+        </button>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  <section class="banner py-20">
+    <div class="container max-w-[1580px] mx-auto px-5">
+      <div class="flex justify-between items-center">
+        <div class="content max-w-[700px]">
+          <h1 class="text-5xl font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+          <p class="text-2xl bn-font my-6">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+
+          <div class="form max-w-[320px]">
+            <input  class="w-full py-2 px-5 border-gray-300 rounded-sm focus:outline-none text-gray-600" type="text" id="name" placeholder="Enter Your Name">
+            <br>
+            <input class="w-full py-2 px-5 my-5 border-gray-300 rounded-sm focus:outline-none text-gray-600" type="password" id="password" placeholder="Enter password (eg:123456)" >
+            <button class="btn bg-purple-950 text-white rounded-md border-2 border-purple-900 py-5 px-6 focus:outline-none text-base font-semibold hover:bg-white hover:text-purple-950">
+              Get Started
+            </button>
+
+          </div>
+        </div>
+        <div class="banner-img">
+          <img src="assets/hero-student.png" alt="hero">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="Vocabulary py-20">
+    <div class="container max-w-[1580px] mx-auto px-5">
+      <h2 class="text-4xl font-bold text-center mb-9"><span class="text-[#00BCFF]">Let's </span> Learn Vocabularies</h2>
+      <div id="btn-container" class="button-container flex items-center justify-center gap-5">
+        <button class="btn bg-white rounded-md border border-[#422AD5] py-3 px-5 focus:outline-none text-base font-semibold hover:bg-[#422AD5] hover:text-white">
+          <svg id="book" width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4825 0.652344C15.9747 0.625 16.4122 1.00781 16.3848 1.47266V10.7148C16.3848 11.1523 16.0293 11.5352 15.5645 11.5625C14.2247 11.6172 11.4903 11.8906 9.60356 12.8477C9.30278 12.9844 8.94731 12.793 8.94731 12.4648V2.51172C8.94731 2.375 9.02935 2.23828 9.16606 2.15625C10.9981 1.03516 13.9786 0.734375 15.4825 0.652344ZM7.88091 2.15625C8.01763 2.23828 8.09966 2.375 8.09966 2.51172V12.4648C8.09966 12.793 7.74419 12.9844 7.44341 12.8477C5.55669 11.8906 2.82231 11.6172 1.48247 11.5625C1.01763 11.5352 0.662158 11.1523 0.662158 10.7148V1.47266C0.662158 1.00781 1.07231 0.625 1.5645 0.652344C3.06841 0.734375 6.04888 1.03516 7.88091 2.15625Z"/>
+            </svg>
+          <span>Lesson-1</span>
+        </button>
+       
+      </div>
+      <div class="vocabulary-container p-8 rounded-3xl bg-gray-100 mt-10 grid grid-cols-3 gap-7">
+        <div class="word-box p-10 rounded-xl bg-white">
+          <div class="word-content text-center">
+            <h3 class="text-3xl font-bold">Nourish</h3>
+            <p class="text-xl font-medium my-6">Meaning /Pronounciation</p>
+            <h3 class="bn-font text-3xl font-semibold">পুষ্টি যোগানো / নরিশ</h3>
+          </div>
+          <div class="word-buttons flex justify-between mt-14">
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-info.svg" alt=""></button>
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-volume.svg" alt=""></button>
+          </div>
+        </div>
+
+        <div class="word-box p-10 rounded-xl bg-white">
+          <div class="word-content text-center">
+            <h3 class="text-3xl font-bold">Nourish</h3>
+            <p class="text-xl font-medium my-6">Meaning /Pronounciation</p>
+            <h3 class="bn-font text-3xl font-semibold">পুষ্টি যোগানো / নরিশ</h3>
+          </div>
+          <div class="word-buttons flex justify-between mt-14">
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-info.svg" alt=""></button>
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-volume.svg" alt=""></button>
+          </div>
+        </div>
+
+        <div class=" word-box p-10 rounded-xl bg-white">
+          <div class="word-content text-center">
+            <h3 class="text-3xl font-bold">Nourish</h3>
+            <p class="text-xl font-medium my-6">Meaning /Pronounciation</p>
+            <h3 class="bn-font text-3xl font-semibold">পুষ্টি যোগানো / নরিশ</h3>
+          </div>
+          <div class="word-buttons flex justify-between mt-14">
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-info.svg" alt=""></button>
+           <button class="bg-[#1A91FF20] p-5 hover:bg-[#1A91FF35] transition-all ease-in-out rounded-md"><img src="assets/fi-sr-volume.svg" alt=""></button>
+          </div>
+        </div>
+
+        <div class="text-center py-10 mt-20 col-span-full">
+          <p class="bn-font mb-5 text-lg text-gray-500">আপনি এখনো কোন Lesson Select করেন নি ।</p>
+          <h3 class="font-bold text-4xl bn-font">একটি Lesson Select করুন ।</h3>
+        </div>
+
+        
+        <div class="text-center py-10 mt-20 col-span-full">
+          <img class="mx-auto" src="assets/alert-error.png" alt="">
+          <p class="bn-font my-5 text-lg text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি ।</p>
+          <h3 class="font-bold text-4xl bn-font">নেক্সট Lesson এ যান ।</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq  py-20">
+    <div class="container max-w-[1580px] mx-auto px-5">
+      <h2 class="text-4xl font-bold text-center mb-9"><span class="text-[#00BCFF]">Frequently  </span> Asked Questions</h2>
+      <div class="accordion-contianer">
+        <div class="accordion bg-[#F8F8F8] rounded-lg mb-5">
+          <h5 class=" accordion-title active text-lg font-medium px-8 py-4 relative">1.How can I start learning English on this website?</h5>
+          <p class="accordion-desc show text-base text-gray-500 px-8">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+        </div>
+        <div class="accordion bg-[#F8F8F8] rounded-lg mb-5">
+          <h5 class=" accordion-title text-lg font-medium px-8 py-4 relative">1.How can I start learning English on this website?</h5>
+          <p class="accordion-desc text-base text-gray-500 px-8">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+        </div>
+
+        <div class="accordion bg-[#F8F8F8] rounded-lg mb-5">
+          <h5 class=" accordion-title text-lg font-medium px-8 py-4 relative">1.How can I start learning English on this website?</h5>
+          <p class="accordion-desc text-base text-gray-500 px-8">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+        </div>
+
+        <div class="accordion bg-[#F8F8F8] rounded-lg mb-5">
+          <h5 class=" accordion-title text-lg font-medium px-8 py-4 relative">1.How can I start learning English on this website?</h5>
+          <p class="accordion-desc text-base text-gray-500 px-8">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+        </div>
+      </div>
+     
+    </div>
+  </section>
+
+  <footer id="footer" class="footer  pt-24 pb-10 border-t-2 border-red-50">
+    <div class="container max-w-[1580px] mx-auto px-5">
+      <div class="flex justify-between w-full items-end ">
+        <div class="footer-content">
+          <a class="logo flex items-center text-center cursor-pointer mb-5">
+            <span class="text-xl font-semibold text-gray-800">English</span>
+            <img class="" src="assets/logo.png" alt="logo png">
+            <span  class="text-xl font-semibold text-gray-800 bn-font">জানালা</span>   
+          </a>
+          <h5 class="text-xl bn-font font-medium mb-2">ইংরেজি শিখুন সহজে</h5>
+          <p class="text-lg text-gray-500 ">Providing ED-Tech Applications since 2025</p>
+        </div>
+        <div class="footer-icons">
+          <p class="text-base text-gray-500 mb-4">Follow Us</p>
+          <div class="icon-container flex gap-3">
+            <button class=""><img class="size-6 " src="assets/fb-thumb.png" alt=""></button>
+            <button class=""><img class="size-6 " src="assets/youtube-thumb.png" alt=""></button>
+            <button class=""><img class="size-6 " src="assets/instagram-thumb.png" alt=""></button>
+            <button class=""><img class="size-6" src="assets/github-thumb.png" alt=""></button>
+          </div>
+        </div>
+      </div>
+      </div>
+  </footer>
+
+
+  
+
+    <script src="script.js"></script>
+  </body>
+</html>
